@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>یه لاکپشت دارم روپایی میزنه &#128540;</title>
+    <style>
+        body {
+            position: relative;
+            background-color: #f3f3f3;
+        }
+
+        #background{
+            position: absolute;
+            z-index: -1;
+            width: 400px;
+            left: calc((100% / 2) - 200px);
+            top: 0px;
+            transform: rotate
+        }
+
+        #turtle {
+            position: absolute;
+            z-index: 1;
+            width: 250px;
+            left: calc((100% / 2) - 150px);
+            top: 150px;
+            transform: rotateZ(-10deg);
+            animation: turtle-animate .7s .1s infinite ease-in-out;
+        }
+
+        #turtle-leg {
+            position: absolute;
+            z-index: 0;
+            width: 105px;
+            left: calc((100% / 2) - 55px);
+            top: 390px;
+            transform: rotateZ(-10deg);
+            animation: leg-animate .7s .1s infinite ease-in-out;
+        }
+
+        #ball {
+            position: absolute;
+            z-index: 3;
+            width: 80px;
+            left: calc((100% / 2) + 30px);
+            top: 380px;
+            animation: ball-animate .7s infinite ease-in-out;
+        }
+
+        @keyframes ball-animate {
+            0% {
+                top: 380px;
+                transform: rotateZ(0deg);
+            }
+
+            50% {
+                top: 250px;
+            }
+
+            100% {
+                top: 380px;
+                transform: rotateZ(-360deg);
+            }
+        }
+
+        @keyframes leg-animate {
+            0% {
+                transform: rotateZ(-60deg);
+            }
+
+            50% {
+                transform: rotateZ(-10deg);
+            }
+
+            100% {
+                transform: rotateZ(-60deg);
+            }
+        }
+
+
+        @keyframes turtle-animate {
+            0% {
+                transform: translateY(10px) rotateZ(-10deg);
+            }
+
+            50% {
+                transform: translateY(0px) rotateZ(-10deg);
+            }
+
+            100% {
+                transform: translateY(10px) rotateZ(-10deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img id="background" src="./media/background.png" alt="background">
+    <img id="turtle" src="./media/turtule-1.png" alt="turtle">
+    <img id="turtle-leg" src="./media/turtule-2.png" alt="turtle-leg">
+    <img id="ball" src="./media/ball.png" alt="ball">
+</body>
+
+</html>
